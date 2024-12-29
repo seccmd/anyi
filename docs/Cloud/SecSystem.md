@@ -204,3 +204,92 @@ if [ ${TASK_STATUS} -eq 2 ]; then
 exit 4
 fi
 ```
+
+# GitHub 安全
+
+- https://docs.github.com/zh/code-security/getting-started/github-security-features
+
+* 入门
+* 保护你的组织
+* 机密扫描
+* 代码扫描
+* CodeQL CLI
+* 适用于 VS Code 的 CodeQL
+* 安全通知
+* 供应链安全
+* Dependabot
+
+# Fortify
+
+# 先进软件开发技术-重点学习文档
+
+这个网站记录了很多软件测试领域，先进的软件工具，值得学习。
+
+```
+## 应用程序安全性测试Checkmarx
+https://www.softtest.cn/show/43.html
+
+## C/C++代码静态测试工具Helix QAC
+https://www.softtest.cn/show/41.html
+
+## 支持C/C++/C#/Java/Python/JavaScript/Kotlin的静态分析工具Klocwork
+- https://www.softtest.cn/show/232.html
+
+## 酷探SCA软件成分分析工具
+- https://www.softtest.cn/show/267.html
+
+## Codee Analyzer 静态代码分析器 — 提高C/C++代码性能
+- https://www.softtest.cn/show/264.html
+
+## 企业级源代码安全漏洞和质量缺陷扫描分析服务平台—酷探SAST
+- https://www.softtest.cn/show/310.html
+```
+
+# CodeQL
+
+    ## 替代品 Checkmarx，Fortify SCA
+    - https://codeql.github.com/
+    - https://codeql.github.com/docs/codeql-overview/
+
+    ## learn
+    - https://learn.microsoft.com/en-us/training/modules/code-scanning-with-github-codeql/
+    - https://www.freebuf.com/articles/web/283795.html
+
+## codeql docker
+
+- https://github.com/j3ssie/codeql-docker
+
+```
+docker pull j3ssie/codeql-docker:latest
+
+# simple usage
+docker run --rm --name codeql-docker -v "/tmp/src:/opt/src" -v "/tmp/local-results:/opt/results" -e "LANGUAGE=go" j3ssie/codeql-docker:latest
+
+# webgoat
+docker run --rm --name codeql-docker -v "/root/WebGoat-main:/opt/src" -v "/tmp/local-results:/opt/results" -e "LANGUAGE=java" j3ssie/codeql-docker:latest
+
+```
+
+
+### Docker AWVS
+
+- AWVS https://hub.docker.com/r/secfa/docker-awvs
+
+```
+Usage:
+* docker pull secfa/docker-awvs
+* docker run -it -d -p 13443:3443 --cap-add LINUX_IMMUTABLE secfa/docker-awvs
+* Then visit https://YOUR_IP:13443/
+INFO:
+* Username:admin@admin.com⁠
+* password:Admin123
+* AWVS Version:231123131
+```
+
+### webgoat
+
+- https://hub.docker.com/r/webgoat/webgoat
+
+```
+docker run -p 127.0.0.1:8080:8080 -p 127.0.0.1:9090:9090 webgoat/webgoat
+```
