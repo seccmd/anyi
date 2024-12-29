@@ -2,7 +2,7 @@
 # https://honkit.netlify.app/
 
 ```
-# Install with NPM
+# Install with NPM.
 
 $ npm install honkit --save-dev
 ```
