@@ -702,3 +702,71 @@ iptables -t nat -I PREROUTING -p udp --dport 53 -j REDIRECT --to 1053
 # 删除
 iptables -t nat -D PREROUTING -p udp --dport 53 -j REDIRECT --to 1053
 ```
+
+### 端口复用
+
+
+- https://www.freebuf.com/articles/web/261429.html
+- https://saucer-man.com/operation_and_maintenance/586.html
+- https://idiotc4t.com/defense-evasion/shadowmove-emersion-and-think
+- https://www.usenix.org/system/files/sec20summer_niakanlahiji_prepub.pdf
+- https://blog.vackbot.com/archives/%E4%BB%A3%E7%90%86%E7%AB%AF%E5%8F%A3%E5%A4%8D%E7%94%A8%E5%9C%A8%E5%90%8E%E6%B8%97%E9%80%8F%E5%9C%BA%E6%99%AF%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8%E6%8E%A2%E7%A9%B6
+
+```
+在后渗透场景中，代理几乎是不可或缺的一部分，对于多层网络架构的复杂内网环境而言，多级代理、多协议代理、端口复用等代理功能便尤为重要，本文将分以下几个部分逐步介绍：
+
+常见代理的方式
+代理端口复用研究
+基于已有服务的端口复用方式
+常见代理方式
+反向代理
+反向代理（Reverse Proxy）指的是由目标服务器主动像客户端发起连接请求的代理模式，这种代理模式通常是攻防实战中完成边界突破后的代理方式的优选项，稳定性相对更佳。缺点是服务器需要具备出网能力，在流量侧会有主动外连的痕迹，如果使用的代理工具存在流量侧特征容易被态势感知等设备发现。列举几个反代工具：
+1、frp
+https://github.com/fatedier/frp.git
+
+2、earthworm
+https://github.com/idlefire/ew.git
+
+3、ngrok
+https://github.com/inconshreveable/ngrok.git
+
+4、nps
+https://github.com/ehang-io/nps
+
+5、erfrp
+https://github.com/Goqi/Erfrp
+
+正向代理
+正向代理（Forward Proxy）是指由客户端向代理服务器发起请求，并由代理服务器向目标转发的代理方式，这种代理模式是科学上网常用的代理方式。在攻防实战中，由于目标主机服务器通常在内网环境，服务由例如nginx等服务将服务端口代理映射出去，因此在服务上主动创建的代理监听服务很难通过公网访问到。通常做法是复用web服务，通过对应的开发语言写代理的服务，再通过正向代理实现连接，这种方式通常稳定性和速度相对较差，通常在服务器无法出网的情况下选择。列举两个webProxy：
+
+1、reGeorg
+https://github.com/sensepost/reGeorg.git
+
+2、Neo-reGeorg
+https://github.com/L-codes/Neo-reGeorg
+
+```
+
+```
+
+端口复用
+端口复用，也被称为端口共享，是指在同一台主机上，允许多个网络应用程序使用同一个网络端口的技术。这种技术可以有效地提高网络资源的利用率，避免端口资源的浪费。在网络安全场景下的端口复用主要目的是为了隐藏攻击痕迹和进行防火墙bypass。
+
+重定向方式实现
+使用场景通常为防火墙限制了访问端口。通过系统的流量转发功能实现，Linux下通过iptables实现流量转发。假设原本服务器开放了80端口，我们要将eth0网卡的80端口流量全部转发到本地代理监听端口8080。
+
+iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 80 -j REDIRECT --to-port 8080
+再由监听的代理服务做流量分流处理，将带有代理特征的流量保留下来，目标流量发送回对应服务，保证原本服务正常进行。比如如果我们劫持转发的服务为web服务，而我们的代理协议使用的是socks5协议，我们可以通过协议头进行判断和过滤。
+
+对于windows而言，非系统服务，比如重定向 Windows 上的 Apache 的 8080 端口到 1080 端口，我们可以使用 IpNat 进行转发。
+
+# 转发命令 
+netsh interface portproxy add v4tov4 listenport=源端口 listenaddress=源IP connectport=目标端口 connectaddress=目标IP
+
+# 查看转发规则
+netsh interface portproxy show all
+
+# 删除规则
+netsh interface portproxy delete v4tov4 listenport=源端口 listenaddress=源IP
+
+```
