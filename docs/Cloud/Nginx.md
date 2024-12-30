@@ -88,6 +88,21 @@ server {
 }
 ```
 
+### 云主机 nginx tcp 端口转发
+```
+- https://blog.csdn.net/qq_40863328/article/details/92802958
+apt install nginx
+vi /etc/nginx/nginx.conf
+stream {
+upstream tcp4444to22 {
+            server 172.18.8.211:22;
+}
+server {
+            listen 4444;
+            proxy_connect_timeout 8s;
+            proxy_pass tcp4444to22;
+```
+
 ### NGINX location 在配置中的优先级
 
 ```
