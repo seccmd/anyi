@@ -1,5 +1,9 @@
 # VPN 相关工具
 
+### Firezone
+
+- https://www.firezone.dev/docs
+
 ### Gost 
 
 - 隧道神器 gost
