@@ -1,5 +1,19 @@
 # SSH
 
+### Win 安装 ssh 服务
+```
+- https://www.jianshu.com/p/d682b645615f
+Get-WindowsCapability -Online | Where-Object Name -like 'OpenSSH*'
+# Install the OpenSSH Client
+Add-WindowsCapability -Online -Name OpenSSH.Client~~~~0.0.1.0
+# Install the OpenSSH Server
+Add-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0
+# Start the sshd service
+Start-Service sshd
+# OPTIONAL but recommended:
+Set-Service -Name sshd -StartupType 'Automatic'
+```
+
 ### autossh
 
  autossh -M 8888 -NCfR 2222:localhost:22 -o ServerAliveInterval=30 root@ssh.test.cn
