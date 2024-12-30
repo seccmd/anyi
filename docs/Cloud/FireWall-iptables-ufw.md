@@ -52,6 +52,18 @@ sudo ufw allow 9443/tcp
 sudo ufw enable
 ```
 
+### 云主机 snat 配置
+    iptables -t nat -I POSTROUTING -s 192.168.0.0/16 -j SNAT --to-source  192.168.0.1(云主机自身本地IP)
+    iptables -t nat -I POSTROUTING -s 172.18.8.0/24 -j SNAT --to-source  172.18.8.210
+    iptables -L -n -t nat # 查看 nat 规则
+    - https://blog.csdn.net/weixin_46389364/article/details/109393899
+    - https://blog.csdn.net/qq_40025218/article/details/84837802
+
+### 云主机 dnat 配置，由于包转发，包含外网原始地址，不是内网地址直接丢弃。
+    iptables -t nat -A PREROUTING -d 172.18.8.210 -p tcp -m tcp --dport 2222 -j DNAT --to-destination 172.18.8.211:22
+    iptables -L -n -t nat # 查看 nat 规则
+    ssh -p 2222 -D 1080 nat_ip
+    - https://www.cnblogs.com/jjzd/p/6505871.html
 
 ### Linux的策略路由
 - https://www.ujslxw.com/2020/10/19/44.html
