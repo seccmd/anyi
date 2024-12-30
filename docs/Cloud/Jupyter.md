@@ -267,3 +267,40 @@ print("Write script done.")
 ! sh /tmp/deploy_env.sh
 print("Install golang done.")
 ```
+
+
+### 安装jupyter notebook
+
+```
+## Google 云服务
+https://colab.research.google.com/
+
+## 安装jupyter notebook
+
+`$ pip3 install jupyter`
+
+通过国内镜像源安装第三方包的方法（安装速度更快）
+
+`$ pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple jupyter`
+
+`$ pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple feedparser`
+
+`$ pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple lxml`
+
+`$ pip3 install html2text`
+
+`$ pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple scrapy`
+
+
+## 使用jupyter notebook
+
+`$ jupyter notebook `
+
+指定网络地址和端口
+
+`$ jupyter notebook --port 8888 --ip=0.0.0.0 `
+
+查看登陆授权码 Token authentication
+
+`$ jupyter notebook list`
+```
