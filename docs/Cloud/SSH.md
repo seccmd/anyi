@@ -195,3 +195,24 @@ dropbearkey -y -f id_rsa | grep "^ssh-rsa" >> authorized_keys
 /etc/dropbear/authorized_keys (服务端)
 /etc/dropbear/id_rsa  (客户端)
 ```
+
+### 配置
+
+```
+其他:
+限制用户 SSH 登录
+# 1.只允许指定用户进行登录（白名单）：
+# 在 /etc/ssh/sshd_config 配置文件中设置 AllowUsers 选项，（配置完成需要重启 SSHD 服务）格式如下：
+> AllowUsers    aliyun test@192.168.1.1   # 允许 aliyun 和从 192.168.1.1 登录的 test 帐户通过 SSH 登录系统。
+# 2.只拒绝指定用户进行登录（黑名单）：
+# 在/etc/ssh/sshd_config配置文件中设置DenyUsers选项，（配置完成需要重启SSHD服务）格式如下：   
+> DenyUsers    zhangsan aliyun  # 拒绝 zhangsan、aliyun 帐户通过 SSH 登录系统
+限制 IP SSH 登录
+# 通过hosts.allow许可大于hosts.deny限制或者允许某个或者某段IP地址远程 SSH 登录服务器，具体如下：
+# hosts.allow 文件中的规则优先级高，按照此方法设置后服务器只允许 192.168.0.1 这个 IP 地址的 ssh 登录，其它的 IP 都会拒绝。
+> vim /etc/hosts.allow， 添加
+> sshd:192.168.0.1:allow  #允许 192.168.0.1 这个 IP 地址 ssh 登录
+> sshd:192.168.0.1/24:allow #允许 192.168.0.1/24 这段 IP 地址的用户登录
+> vim /etc/hosts.allow，添加
+> sshd:ALL # 允许全部的 ssh 登录 
+```
