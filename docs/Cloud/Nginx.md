@@ -101,6 +101,7 @@ server {
             listen 4444;
             proxy_connect_timeout 8s;
             proxy_pass tcp4444to22;
+}
 ```
 
 ### NGINX location 在配置中的优先级
