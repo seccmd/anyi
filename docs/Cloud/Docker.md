@@ -88,3 +88,49 @@ docker info
   ]
 }
 ```
+
+### Docker-CE 国内镜像
+
+```
+Docker-CE 国内镜像
+https://mirror.tuna.tsinghua.edu.cn/help/docker-ce/
+
+# 如果你过去安装过 docker，先删掉:
+sudo apt-get remove docker docker-engine docker.io
+
+# 首先安装依赖:
+sudo apt-get install apt-transport-https ca-certificates curl gnupg2 software-properties-common
+
+# 根据你的发行版，下面的内容有所不同。你使用的发行版： 
+# 信任 Docker 的 GPG 公钥:
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
+# 对于 amd64 架构的计算机，添加软件仓库:
+sudo add-apt-repository \
+   "deb [arch=amd64] https://mirrors.tuna.tsinghua.edu.cn/docker-ce/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable"
+
+# 如果你是树莓派或其它 ARM 架构计算机，请运行:
+echo "deb [arch=armhf] https://mirrors.tuna.tsinghua.edu.cn/docker-ce/linux/ubuntu \
+     $(lsb_release -cs) stable" | \
+    sudo tee /etc/apt/sources.list.d/docker.list
+
+# 最后安装
+sudo apt-get update
+sudo apt-get install docker-ce
+```
+
+### Docker-Compose 国外
+
+### Install Docker
+Follow this guide https://docs.docker.com/linux/step_one/ to get Docker installed
+
+### Install Docker-Compose version 1.24.0 (64 bit) via cURL
+1. sudo curl -L "https://github.com/docker/compose/releases/download/1.24.0/docker-compose-Linux-x86_64" -o /usr/local/bin/docker-compose
+
+### Set the executable permissions:
+1. sudo chmod +x /usr/local/bin/docker-compose
+2. sudo docker-compose --version
+3. sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compos
+
