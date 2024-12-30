@@ -60,3 +60,20 @@ rrweb
 
 离线API文档浏览器
 
+### Windows 的备份软件
+
+https://www.oo-software.com/en/diskimage-backup-your-data
+
+### Windows 网络连接管理
+
+- https://safing.io/portmaster/
+- [Network Monitoring and Inventory Tools Package](http://www.nirsoft.net/network_tools.html)
+
+### Websoft9
+
+https://support.websoft9.com/zh/
+
+### DiskDigger磁盘恢复
+
+https://www.majorgeeks.com/files/details/diskdigger.html
+
