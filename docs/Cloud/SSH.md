@@ -1,5 +1,12 @@
 # SSH
 
+### autossh
+
+ autossh -M 8888 -NCfR 2222:localhost:22 -o ServerAliveInterval=30 root@ssh.test.cn
+ 1. ssh-keygen
+ 2. cat ~/.ssh/id_rsa.pub
+
+
 ## SSH 命令的三种代理功能（-L/-R/-D） 
 
 - https://www.cnblogs.com/cangqinglang/p/12732661.html
