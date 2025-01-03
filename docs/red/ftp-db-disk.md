@@ -28,3 +28,7 @@
 
 - https://mp.weixin.qq.com/s?__biz=Mzg3NjA2OTM0NA%3D%3D&mid=2247484574&idx=1&sn=24c8926b658174e7233baaa16df4b619
 
+### 一键转换，轻松将Windows物理机转换为虚拟机
+
+- https://mp.weixin.qq.com/s?__biz=Mzg4MzAwMzkwOA%3D%3D&mid=2247489947&idx=1&sn=fd0dcaf72cd211188020262903d7391c
+- VMware vCenter Converter
