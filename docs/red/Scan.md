@@ -1,4 +1,4 @@
-# Scan
+# Scan 攻击面
 
 ### Milkyway
 
@@ -20,3 +20,11 @@
 - https://caldera.mitre.org/
 - Caldera 是一个自动化攻击模拟平台，基于 MITRE ATT&CK™ 框架构建，旨在帮助安全团队评估网络防御的有效性。它能够模拟各种真实的攻击场景，从而帮助你发现网络中的安全漏洞和薄弱环节。
 - https://mp.weixin.qq.com/s?__biz=MzA4NTY4MjAyMQ%3D%3D&mid=2447899543&idx=1&sn=425ca6cfb33909905471d0cb96253ae3
+
+### 无影v2.6.7—代理池管理功能上线
+
+- https://mp.weixin.qq.com/s?__biz=Mzg2NTA4OTI5NA%3D%3D&mid=2247517729&idx=1&sn=01a1786ad5440080df9e850ce24a5a42
+
+### Kraken：一站式暴力破解神器
+
+- https://mp.weixin.qq.com/s?__biz=Mzg5MzMzNTUzMA%3D%3D&mid=2247485883&idx=1&sn=e15155f7577bd50e8ac2c0cb7eb321d7
