@@ -28,3 +28,29 @@
 ### Kraken：一站式暴力破解神器
 
 - https://mp.weixin.qq.com/s?__biz=Mzg5MzMzNTUzMA%3D%3D&mid=2247485883&idx=1&sn=e15155f7577bd50e8ac2c0cb7eb321d7
+
+### xray xpoc
+
+- [https://github.com/chaitin/xray](https://github.com/chaitin/xray/releases/download/1.9.11/xray_linux_amd64.zip)
+
+### nuclei
+
+- [https://github.com/projectdiscovery/nuclei/](https://github.com/projectdiscovery/nuclei/releases/tag/v3.3.0)
+
+[**Raccoon**](https://github.com/evyatarmeged/Raccoon)
+
+- [https://github.com/evyatarmeged/Raccoon](https://github.com/evyatarmeged/Raccoon)
+- pip install raccoon-scanner
+
+### dnsrecon 
+
+- [https://github.com/darkoperator/dnsrecon](https://github.com/darkoperator/dnsrecon)
+
+### gobuster
+
+- [https://github.com/OJ/gobuster/releases/download/v3.6.0/gobuster_Linux_x86_64.tar.gz](https://github.com/OJ/gobuster/releases/download/v3.6.0/gobuster_Linux_x86_64.tar.gz)
+
+### 编写PoC
+
+- [https://docs.xray.cool/plugins/QuickStart](https://docs.xray.cool/plugins/QuickStart)
+
