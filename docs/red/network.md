@@ -12,3 +12,8 @@
 - https://mp.weixin.qq.com/s?__biz=MzIzNTE0Mzc0OA%3D%3D&mid=2247485970&idx=1&sn=1df7f9faefa1e07a144d4c4267a34ee9
 - https://github.com/howmp/reality
 - 完美消除网络特征防止服务端被主动探测客户端和用户端内嵌配置，不需要命令行或额外配置文件
+
+### Chisel 超轻量级的远程传输工具13KStar
+
+- https://mp.weixin.qq.com/s?__biz=MzU5NDg5MzM5NQ%3D%3D&mid=2247509976&idx=1&sn=add32a3e7d2275ea7b0a59f832855367
+- Chisel 是一个开源的、跨平台的、用 Go 编写的简单工具，用于创建 TCP/UDP 隧道和 HTTP 隧道
