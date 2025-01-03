@@ -10,6 +10,15 @@
 
 - https://mp.weixin.qq.com/s?__biz=MzIzODg1OTk3OA%3D%3D&mid=2247484671&idx=1&sn=ba127231e6a3a70f68ac686a40b5ba5e
 
+### 用Browserflow自动化浏览器任务
+
+- https://mp.weixin.qq.com/s?__biz=Mzg2MDU5MTMyNA%3D%3D&mid=2247484399&idx=1&sn=cb5c80f5818519fc32017ec637ae296c
+
+### 3.3K Star超级代理人 !!!  生产力爆炸100
+
+- https://mp.weixin.qq.com/s?__biz=Mzg3NzU0NzIxMA%3D%3D&mid=2247499866&idx=1&sn=77856ef6b9feb311eae0cce4810d551b
+- Huginn是一个强大的开源自动化工具
+
 ## 打包
 
 ### Nuitka：一个将 Python 代码编译为可执行文件的神器
